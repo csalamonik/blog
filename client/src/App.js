@@ -6,7 +6,7 @@ import { Login } from './Login';
 const App = () => {
 
   const [serverState, setServerState] = useState(null);
-  const [isAuthorized, setIsAUthorized] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState(false);
   const [token, setToken] = useState(null);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const App = () => {
 
     const token = localStorage.getItem('token');
     if (token) {
-      setIsAUthorized(true);
+      setIsAuthorized(true);
       setToken(token);
     }
   })
