@@ -17,7 +17,7 @@ const App = () => {
       setIsAuthorized(true);
       setToken(token);
     }
-  })
+  }, [])
 
   return (
     <section>

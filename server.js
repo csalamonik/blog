@@ -14,6 +14,11 @@ db.users = Datastore({
     autoload: true,
 });
 
+db.posts = Datastore({
+    filename: path.resolve(path.dirname(''), './database/posts.db'),
+    autoload: true,
+})
+
 
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -33,7 +38,13 @@ app.post('/api/login', async (req, res) => {
     } else {
         res.status(401).json({ authorized: false });
     }
+})
 
+//create post
+app.post('/api/posts', async (req, res) => {
+    const { title, content } = req.body;
+    const status = await db.posts.insert({ title, content });
+    res.json(status);
 })
 
 // serve static react app
