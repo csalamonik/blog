@@ -16,7 +16,7 @@ const Admin = ({ token }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Autorization: `Basic ${token}`,
+        Authorization: `Basic ${token}`,
       },
       body: JSON.stringify({ title, content }),
     })
