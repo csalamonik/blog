@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Admin } from './Admin';
 import { Login } from './Login';
 
-
 const App = () => {
-
   const [serverState, setServerState] = useState(null);
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [token, setToken] = useState(null);

@@ -7,6 +7,10 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const httpServer = http.Server(app);
 
+// base64 helpers
+// const btoa = (string) => Buffer.from(string).toString('base64');
+// const atob = (encoded) => Buffer.from(encoded, 'base64').toString();
+
 const db = {};
 
 db.users = Datastore({
@@ -44,6 +48,17 @@ app.post('/api/login', async (req, res) => {
 app.post('/api/posts', async (req, res) => {
     const { title, content } = req.body;
     const status = await db.posts.insert({ title, content });
+    res.json(status);
+})
+
+//get list 
+app.get('/api/posts', async (req, res) => {
+    const posts = await db.posts.find({});
+    res.json({ posts });
+})
+//delete 
+app.delete('/api/posts/:id', async (req, res) => {
+    const status = await db.posts.remove({ _id: req.params.id });
     res.json(status);
 })
 
