@@ -1,12 +1,15 @@
+
 # blog
-<h3>Simple MERN  aplication</h3> 
+### Simple MERN  aplication
 
-<h4>This app is based on:</h4>
-<ul>
- <li>Mongo</li>
- <li>Express</li>
- <li>React</li>
- <li>Node</li>
-</ul> 
+#### This app is based on:
 
- 
+* Mongo
+* Express
+* React
+* Node
+
+Link -> [here]
+
+
+[here]: https://cs-mern-app.herokuapp.com/
